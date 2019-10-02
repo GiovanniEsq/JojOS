@@ -14,6 +14,7 @@ int main(){
     int pid;
     //le dice "ejecuta signal handler cuando se mande un 10 a un prioceso"
     signal(10, signalHandler);
+    //aquí clona el proceso actual, creando una copia similar, el fork regresa el pid.
     pid = fork();
     if(pid == 0){
         printf("Soy el hijo\n");

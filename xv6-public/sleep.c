@@ -5,8 +5,8 @@ int main(int argc, char *argv[]){
     if(argc<2){
         exit();
     }
-    int secdor = atoi(argv[1]);
-    if(secdor<=0){
+    int secdr = atoi(argv[1]);
+    if(secdr<=0){
         exit();
     }else{
         sleep(atoi(argv[1])*100);

@@ -75,12 +75,12 @@ int main(int argc, char **argv) {
         printf("Elemento no encontrado\n");
     } else {
         Student myStudent;
-        int maxLen = sizeof(myStudent.lastName);
-        char truncateLN[maxLen];
-        strncpy(truncateLN, newLastName, maxLen);
+        int lastNameMaxSize = sizeof(myStudent.lastName);
+        char trunLastName[lastNameMaxSize];
+        strncpy(trunLastName, newLastName, lastNameMaxSize);
         int fd = open(fileName, O_WRONLY);
         lseek(fd, posElement*sizeof(Student)+sizeof(myStudent.firstName), SEEK_SET);
-        write(fd, truncateLN, strlen(truncateLN));
+        write(fd, trunLastName, lastNameMaxSize);
         close(fd);
     }
 }
